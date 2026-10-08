@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-docup",
-  "version": "0.1.0",
+  "version": "0.3.2",
   "description": "tree-sitter grammar for DocUP (.du) — Document Unambiguous Precise",
   "main": "bindings/node",
   "keywords": [

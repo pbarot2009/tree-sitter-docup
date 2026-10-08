@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-docup"
-version = "0.1.0"
+version = "0.3.2"
 description = "tree-sitter grammar for DocUP (.du)"
 readme = "README.md"
 license = { text = "Apache-2.0" }

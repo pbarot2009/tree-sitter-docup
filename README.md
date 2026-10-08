@@ -2,7 +2,12 @@
 
 tree-sitter grammar for **DocUP** (`.du`) — Document Unambiguous Precise.
 
-Reference compiler: [`../docup/quote(`.du` -> HTML5, Rust `docup-lang 0.3.1`).
+Version **0.3.2** — tracks the DocUP compiler (`docup version 0.3.2`).
+Policy: grammar `MAJOR.MINOR` always equals the compiler it supports;
+grammar `PATCH` bumps for grammar-only fixes. When the language gains
+syntax (see the compiler roadmap), the grammar minor follows.
+
+Reference compiler: `docup/` in this workspace (`.du` → HTML5, Rust).
 This grammar mirrors `docup/src/lexer.rs` + `parser.rs` + `ast.rs` exactly.
 
 ## Layout
@@ -12,7 +17,7 @@ tree-sitter-docup/
   grammar.js            # single source of truth (JS DSL, mandatory)
   src/scanner.c         # external scanner: prose/raw/code/math (C, mandatory)
   src/parser.c          # generated — do not edit (`tree-sitter generate`)
-  queries/              # highlights.scm injections.scm folds.scm indents.scm
+  queries/              # highlights injections folds indents textobjects (.scm)
   test/corpus/          # `tree-sitter test` corpus
   examples/hello.du     # minimal sample
   bindings/{rust,python,node}/

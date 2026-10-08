@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-docup"
-version = "0.1.0"
+version = "0.3.2"
 edition = "2021"
 description = "tree-sitter grammar for DocUP (.du)"
 license = "Apache-2.0"
