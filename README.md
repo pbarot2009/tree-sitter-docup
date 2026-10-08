@@ -73,3 +73,54 @@ duplicate `meta`, `h(1..6)`, callout kind, table width, `src`-vs-body,
 - `injections.scm` — `codeblock(lang)` → that language, `m`/`math` → latex,
   `raw` → html, inline `code` → text.
 - `folds.scm`, `indents.scm` — every braced block.
+
+## Helix setup (Helix 25.x)
+
+1. Build the grammar shared library from this repo:
+
+   ```bash
+   cd tree-sitter-docup
+   tree-sitter generate   # only needed after editing grammar.js / scanner.c
+   tree-sitter build -o ~/.config/helix/runtime/grammars/docup.so .
+   ```
+
+2. Install the queries:
+
+   ```bash
+   mkdir -p ~/.config/helix/runtime/queries/docup
+   cp queries/*.scm ~/.config/helix/runtime/queries/docup/
+   ```
+
+3. Register the language in `~/.config/helix/languages.toml`:
+
+   ```toml
+   [[language]]
+   name = "docup"
+   scope = "source.docup"
+   file-types = ["du"]
+   roots = [".git"]
+   comment-token = "//"
+   block-comment-tokens = { start = "/*", end = "*/" }
+   indent = { tab-width = 4, unit = "    " }
+   grammar = "docup"
+   ```
+
+4. Verify:
+
+   ```bash
+   hx --health docup   # want: Tree-sitter parser ✓, Highlight queries ✓
+   hx some-file.du     # .du files now highlight
+   ```
+
+   After editing `grammar.js` or `src/scanner.c`, repeat steps 1–2
+   (rebuild the `.so`, re-copy any changed `queries/*.scm`).
+
+   Once this repo is pushed to GitHub, you can switch to managed grammars:
+
+   ```toml
+   [[grammar]]
+   name = "docup"
+   source = { git = "https://github.com/<you>/tree-sitter-docup", rev = "main" }
+   ```
+
+   then `hx --grammar fetch` + `hx --grammar build` maintain `docup.so`.
