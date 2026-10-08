@@ -1,0 +1,19 @@
+meta {
+    title: "Hello DocUP",
+    author: "Prathmesh",
+    version: "1.0.0"
+}
+
+h(1) { Hello, DocUP }
+
+p {
+    This is a paragraph with b{bold}, i{italic}, and inline code{let x = 1;}.
+}
+
+codeblock(lang: "go", file: "main.go") {!
+package main
+
+func main() {
+    println("Hello, DocUP!")
+}
+!}

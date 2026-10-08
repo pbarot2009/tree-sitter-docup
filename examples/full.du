@@ -1,0 +1,108 @@
+meta {
+    title: "DocUP: Full Feature Test",
+    author: "Prathmesh",
+    version: "1.0.0"
+}
+
+h(1) { DocUP Phase 1 }
+
+h(2, id: "intro", class: "section") { Introduction }
+
+p {
+    DocUP is a document markup language with b{single-pass parsing}, i{zero
+    ambiguity}, and explicit scoping. This paragraph shows b{bold}, i{italic},
+    b{i{bold italic}}, strike{strikethrough}, and inline code{let x = 1;} all in
+    one place.
+}
+
+hr {}
+
+h(2, id: "links") { Links and Quotes }
+
+p {
+    Learn more at link("https://example.com"){the DocUP homepage}, or read the
+    link("https://example.com/spec"){language spec}.
+}
+
+quote {
+    Good design is as little design as possible.
+
+    quote { A nested quote, for attributing a quote within a quote. }
+}
+
+hr {}
+
+h(2, id: "lists") { Lists }
+
+p { An unordered list of core features, with a nested sub-list: }
+
+list {
+    item {
+        Metadata blocks for document info
+
+        list(ordered: true) {
+            item { Nested ordered child A }
+            item { Nested ordered child B }
+        }
+    }
+    item { Headings from h(1) through h(6) }
+    item { Paragraphs with b{bold}, i{italic}, and code{inline code} }
+}
+
+p { An ordered list of build steps: }
+
+list(ordered: true) {
+    item { Lex the source into tokens }
+    item { Parse tokens into an AST }
+    item { Analyze the AST for errors }
+    item { Generate the final HTML }
+}
+
+p { A task list of project milestones: }
+
+list {
+    task(done: true) { Design the grammar }
+    task(done: true) { Write the parser }
+    task(done: false) { Reach v0.3.1 }
+}
+
+hr {}
+
+h(2, id: "media") { Images and Code }
+
+image("https://example.com/diagram.png", alt: "Architecture diagram")
+
+codeblock(lang: "go", file: "main.go") {!
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Closing brace } and quotes \" work fine!")
+}
+!}
+
+hr {}
+
+h(2, id: "table") { Tables }
+
+table {
+    row(header: true) {
+        cell { Feature }
+        cell { Status }
+    }
+    row {
+        cell { Tables }
+        cell { b{Done} }
+    }
+    row {
+        cell { Nested lists and quotes }
+        cell { b{Done} }
+    }
+}
+
+p {
+    That's all 15 features: meta, headings, paragraphs, inline styling (bold,
+    italic, code, strikethrough), codeblock, hr, list/item, link, quote, image,
+    nested lists, nested quotes, task lists, and tables.
+}

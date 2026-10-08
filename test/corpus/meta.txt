@@ -1,0 +1,17 @@
+==================
+Meta block
+==================
+
+meta {
+    title: "Hello DocUP",
+    author: "Prathmesh",
+    version: "1.0.0"
+}
+
+---
+
+(document
+  (meta_block
+    (meta_field key: (identifier) value: (string))
+    (meta_field key: (identifier) value: (string))
+    (meta_field key: (identifier) value: (string))))

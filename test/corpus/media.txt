@@ -1,0 +1,44 @@
+==================
+Images callouts footnotes includes comments
+==================
+
+// a line comment
+/* a block comment */
+
+image("https://example.com/diagram.png", alt: "Architecture diagram")
+
+callout(type: "warning") { Check level. }
+
+footnote(id: "required-title") { Title required. }
+
+include "fragments/sample-table.du"
+
+include("intro.du")
+
+---
+
+(document
+  (comment)
+  (comment)
+  (image_block
+    (string)
+    (named_arg
+      key: (identifier)
+      value: (attr_value
+        (string))))
+  (callout_block
+    (attr_list
+      (named_arg
+        key: (identifier)
+        value: (attr_value
+          (string)))))
+  (footnote_def
+    (attr_list
+      (named_arg
+        key: (identifier)
+        value: (attr_value
+          (string)))))
+  (include_stmt
+    (string))
+  (include_stmt
+    (string)))

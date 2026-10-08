@@ -1,0 +1,57 @@
+==================
+Headings paragraphs and inlines
+==================
+
+h(1) { Hello, DocUP }
+
+h(2, id: "intro", class: "section") { Introduction }
+
+p {
+    This is a paragraph with b{bold}, i{italic}, and inline code{let x = 1;}.
+}
+
+---
+
+(document
+  (heading
+    level: (number))
+  (heading
+    level: (number)
+    (named_arg
+      key: (identifier)
+      value: (attr_value
+        (string)))
+    (named_arg
+      key: (identifier)
+      value: (attr_value
+        (string))))
+  (paragraph
+    (bold)
+    (italic)
+    (inline_code)))
+
+==================
+Links footnotes escapes
+==================
+
+p {
+    Learn more at link("https://example.com"){the DocUP homepage}, or fn(note-1) and fn("with space").
+}
+
+p { Escapes: \{ \} \! \\ literal }
+
+---
+
+(document
+  (paragraph
+    (link
+      url: (string))
+    (footnote_ref
+      (footnote_id))
+    (footnote_ref
+      (string)))
+  (paragraph
+    (escape_sequence)
+    (escape_sequence)
+    (escape_sequence)
+    (escape_sequence)))

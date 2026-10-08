@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "docup",
+      "scope": "source.docup",
+      "path": ".",
+      "file-types": ["du"],
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "folds": "queries/folds.scm",
+      "indents": "queries/indents.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "Apache-2.0",
+    "description": "tree-sitter grammar for DocUP (.du) — Document Unambiguous Precise",
+    "authors": [
+      {
+        "name": "DocUP contributors",
+        "url": "https://github.com/pbarot2009/docup"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/pbarot2009/docup"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

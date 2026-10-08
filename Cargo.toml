@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-docup"
+version = "0.1.0"
+edition = "2021"
+description = "tree-sitter grammar for DocUP (.du)"
+license = "Apache-2.0"
+repository = "https://github.com/pbarot2009/docup"
+keywords = ["tree-sitter", "docup", "markup", "parser"]
+categories = ["parsing", "text-processing"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+tree-sitter = "0.25"
+
+[build-dependencies]
+cc = "1"

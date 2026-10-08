@@ -1,0 +1,22 @@
+{
+  "name": "tree-sitter-docup",
+  "version": "0.1.0",
+  "description": "tree-sitter grammar for DocUP (.du) — Document Unambiguous Precise",
+  "main": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "docup",
+    "markup",
+    "parser"
+  ],
+  "license": "Apache-2.0",
+  "repository": "https://github.com/pbarot2009/docup",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0"
+  }
+}

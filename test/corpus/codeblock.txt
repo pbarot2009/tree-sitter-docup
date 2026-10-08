@@ -1,0 +1,54 @@
+==================
+Verbatim codeblock with braces inside
+==================
+
+codeblock(lang: "go", file: "main.go") {!
+package main
+
+func main() {
+    println("Hello, DocUP!")
+}
+!}
+
+---
+
+(document
+  (codeblock
+    (attr_list
+      (named_arg
+        key: (identifier)
+        value: (attr_value
+          (string)))
+      (named_arg
+        key: (identifier)
+        value: (attr_value
+          (string))))
+    (raw_body)))
+
+==================
+Src-only codeblock and raw math toc hr
+==================
+
+codeblock(src: "Cargo.toml")
+
+raw {! <aside>not parsed</aside> !}
+
+math {! \int_{0}^{1}x\,dx !}
+
+hr {}
+
+toc {}
+
+---
+
+(document
+  (codeblock
+    (attr_list
+      (named_arg
+        key: (identifier)
+        value: (attr_value
+          (string)))))
+  (raw_block)
+  (math_block)
+  (hr)
+  (toc_block))

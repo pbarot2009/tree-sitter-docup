@@ -1,0 +1,33 @@
+# NOTE: src/parser.c, src/grammar.json and src/node-types.json are COMMITTED
+# on purpose — consumers (Rust/Python/Go/Node) build without tree-sitter CLI.
+# Regenerate with `tree-sitter generate` after editing grammar.js/scanner.c.
+
+# Rust
+/target/
+Cargo.lock
+
+# Node
+/build/
+node_modules/
+*.node
+
+# Python
+__pycache__/
+*.pyc
+dist/
+*.egg-info/
+.venv/
+
+# C artifacts
+*.so
+*.dylib
+*.dll
+*.o
+*.a
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
