@@ -73,6 +73,7 @@ duplicate `meta`, `h(1..6)`, callout kind, table width, `src`-vs-body,
 - `injections.scm` — `codeblock(lang)` → that language, `m`/`math` → latex,
   `raw` → html, inline `code` → text.
 - `folds.scm`, `indents.scm` — every braced block.
+- `textobjects.scm` — blocks/inlines as functions, attrs as parameters.
 
 ## Helix setup (Helix 25.x)
 
